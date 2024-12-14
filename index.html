@@ -18,7 +18,7 @@
             <div class="navbar">
                 <h1 class="logo">Ritchi Rénov</h1>
                 <nav>
-                    <ul>
+                    <ul class="menu">
                         <li><a href="#about" class="smooth-scroll" aria-label="Aller à la section À propos">À propos</a></li>
                         <li><a href="#services" class="smooth-scroll" aria-label="Aller à la section services">Services</a></li>
                         <li><a href="#process" class="smooth-scroll" aria-label="Aller au processus de travail">Processus</a></li>
@@ -261,6 +261,23 @@
                 });
             });
         });
+
+        // Adjust menu placement dynamically
+        const menu = document.querySelector('nav ul.menu');
+        const logo = document.querySelector('.logo');
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 768) {
+                menu.style.top = `${logo.offsetHeight + 10}px`;
+            } else {
+                menu.style.top = '';
+            }
+        });
+
+        // Set initial position on load
+        if (window.innerWidth <= 768) {
+            menu.style.top = `${logo.offsetHeight + 10}px`;
+        }
     </script>
 </body>
 </html>
