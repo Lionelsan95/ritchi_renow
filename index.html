@@ -17,6 +17,12 @@
         <div class="container">
             <div class="navbar">
                 <h1 class="logo">Ritchi Rénov</h1>
+                <!-- Bouton Burger -->
+                <div class="burger" aria-label="Menu Burger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
                 <nav>
                     <ul class="menu">
                         <li><a href="#about" class="smooth-scroll" aria-label="Aller à la section À propos">À propos</a></li>
@@ -278,6 +284,16 @@
         if (window.innerWidth <= 768) {
             menu.style.top = `${logo.offsetHeight + 10}px`;
         }
+
+                // Gestion du menu burger
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('nav');
+
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+        });
     </script>
 </body>
 </html>
